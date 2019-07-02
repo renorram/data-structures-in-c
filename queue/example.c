@@ -95,7 +95,7 @@ int main(void)
     	print_queue_status(q);
 
     	int option = get_menu_input();
-    	if (option < opt_exit || option > opt_search) {
+    	if (option < opt_exit || option > opt_invert) {
     		printf("%d is an invalid option.\n", option);
     		continue;
     	}
