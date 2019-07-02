@@ -90,3 +90,25 @@ void queue_print(Queue *q)
 
 	printf("]\n");
 }
+
+void queue_invert(Queue *q)
+{
+	int size = queue_size(q);
+	if (size == 0) {
+		printf("Not able to invert, Queue is empty.\n");
+		return;
+	}
+
+	int i, inversions = size / 2,
+	aux, start = q->start, end = q->end - 1;
+
+	for (i = 0; i < inversions; i++)
+	{
+		aux = q->itens[start];
+		q->itens[start] = q->itens[end];
+		q->itens[end] = aux;
+
+		start = (start + 1) % MAX_ITEMS;
+		end = (end - 1) % MAX_ITEMS;
+	}
+}

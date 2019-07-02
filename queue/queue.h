@@ -17,4 +17,6 @@ int queue_search_value(Queue *q, int value);
 
 void queue_print(Queue *q);
 
+void queue_invert(Queue *q);
+
 #endif //QUEUE_H
