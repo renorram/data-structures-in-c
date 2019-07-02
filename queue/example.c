@@ -10,7 +10,7 @@
 	void clear_console() { system("clear"); }
 #endif
 
-enum options {opt_exit, opt_enqueue, opt_dequeue, opt_search};
+enum options {opt_exit, opt_enqueue, opt_dequeue, opt_search, opt_invert};
 
 void print_error(const char * msg)
 {
@@ -30,7 +30,7 @@ int get_int_input(int * value)
 
 int get_menu_input(void)
 {
-	char str[] = {"Options Menu:\n[0] exit\n[1] enqueue\n[2] dequeue\n[3] search\n"};
+	char str[] = {"Options Menu:\n[0] exit\n[1] enqueue\n[2] dequeue\n[3] search\n[4] invert\n"};
 	int option;
 
 	printf("%s\n", str);
@@ -111,6 +111,9 @@ int main(void)
     			break;
     		case opt_search:
     			search(q);
+    			break;
+    		case opt_invert:
+    			queue_invert(q);
     			break;
     	}
     	printf("Press any key to continue to menu...");
